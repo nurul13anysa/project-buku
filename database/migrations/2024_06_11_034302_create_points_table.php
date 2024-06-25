@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('points', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger("id_point");
+            $table->string('nama_siswa');
+            $table->date('tanggal');
+            $table->string('class');
+            $table->string('tugas_penanganan');
+            $table->string('pelanggaran');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
