@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>isswa</h1>
+<h1>pelanggar</h1>
 @endsection

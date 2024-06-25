@@ -41,7 +41,22 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('siswa') }}">{{ __('Siswa') }}</a>
+                                        <a class="nav-link" href="/siswa">Siswa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/petugas">Petugas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/class_room">Class Room</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/peraturan">Peraturan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/point">Point</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/pelanggar">Pelanggar</a>
                                     </li>
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
