@@ -9,7 +9,11 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        $siswa = Siswa::all();
-        return view('siswa', compact('siswa'));
+        $data = siswa::all();
+
+        $data =[
+            "siswas"=>$data
+        ];
+        return view('siswa.index', $data);
     }
 }

@@ -9,7 +9,11 @@ class PeraturanController extends Controller
 {
     public function index()
     {
-        $peraturan = Peraturan::all();
-        return view('peraturan', compact('peraturan'));
+        $data = peraturan::all();
+
+        $data =[
+            "peraturans"=>$data
+        ];
+        return view('peraturan.index', $data);
     }
 }

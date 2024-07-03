@@ -9,8 +9,12 @@ class PetugasController extends Controller
 {
     public function index()
     {
-        $petugas = Petugas::all();
-        return view('petugas', compact('petugas'));
+        $data = petugas::all();
+
+        $data =[
+            "petugas"=>$data
+        ];
+        return view('petugas.index', $data);
     }
     
 }

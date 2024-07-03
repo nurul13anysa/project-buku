@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelanggarController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\PetugasController;
@@ -14,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [Dashboard::class,'index']);
+Route::get('/', [DashboardController::class,'index']);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('user',UserController::class);
 
-Route::get('/siswa', [SiswaController::class,'index']);
-Route::get('/petugas', [PetugasController::class,'index']);
-Route::get('/class_room', [ClassRoomController::class,'index']);
-Route::get('/peraturan', [PeraturanController::class,'index']);
-Route::get('/point', [PointController::class,'index']);
-Route::get('/pelanggar', [PelanggarController::class,'index']);
+Route::resource('siswa', SiswaController::class);
+Route::resource('petugas', PetugasController::class);
+Route::resource('class_room', ClassRoomController::class);
+Route::resource('peraturan', PeraturanController::class);
+Route::resource('point', PointController::class);
+Route::resource('pelanggar', PelanggarController::class);

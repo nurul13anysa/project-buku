@@ -9,7 +9,11 @@ class PelanggarController extends Controller
 {
     public function index()
     {
-        $pelanggar = Pelanggar::all();
-        return view('pelanggar', compact('pelanggar'));
+        $data = pelanggar::all();
+
+        $data =[
+            "pelanggars"=>$data
+        ];
+        return view('pelanggar.index', $data);
     }
 }

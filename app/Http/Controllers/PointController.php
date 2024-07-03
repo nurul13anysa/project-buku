@@ -9,7 +9,11 @@ class PointController extends Controller
 {
     public function index()
     {
-        $point = Point::all();
-        return view('point', compact('point'));
+        $data = point::all();
+
+        $data =[
+            "points"=>$data
+        ];
+        return view('point.index', $data);
     }
 }
