@@ -1,6 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Silahkan Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: white; /* Tetapkan latar belakang putih */
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .card-header {
+            background-color: #343a40; /* Ubah warna latar belakang header */
+            color: white; /* Ubah warna teks header */
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-control {
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #202224; /* Ubah warna tombol */
+            border-color: #202224;
+            color: white; /* Warnai teks tombol */
+        }
+
+        .btn-primary:hover {
+            background-color: #343a40; /* Ubah warna saat tombol dihover */
+            border-color: #343a40;
+        }
+    </style>
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -53,7 +102,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary"> <!-- Ganti kelas btn-primary dengan btn-dark untuk tampilan hitam -->
                                     {{ __('Login') }}
                                 </button>
 
@@ -70,4 +119,7 @@
         </div>
     </div>
 </div>
+</body>
+</html>
+
 @endsection
