@@ -16,5 +16,4 @@ class PetugasController extends Controller
         ];
         return view('petugas.index', $data);
     }
-    
 }
