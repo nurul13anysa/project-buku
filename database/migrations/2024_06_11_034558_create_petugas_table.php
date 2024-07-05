@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_petugas');
+            $table->timestamps(); // ini akan menambahkan kolom created_at dan updated_at
         });
     }
 

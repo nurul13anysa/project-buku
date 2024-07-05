@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->string('password');
-            $table->string('class');
+            $table->foreignId('class_rooms_id');
             $table->boolean('gender');
             $table->string('alamat');
             $table->integer('no_telpon');

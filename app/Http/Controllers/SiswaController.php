@@ -9,7 +9,7 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        $data = siswa::all();
+        $data = siswa::with('classRoom')->get();
 
         $data =[
             "siswas"=>$data
