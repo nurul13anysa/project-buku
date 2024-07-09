@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('class');
-            $table->boolean('gender');
+            $table->string('gender');
             $table->string('alamat');
             $table->integer('no_telpon');
             $table->integer('no_kendaraan');
