@@ -31,6 +31,7 @@
                     </thead>
                     <tbody>
                         @foreach($petugas as $index => $item)
+                        {{-- @dd($item) --}}
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $item->nama_petugas }}</td>
@@ -74,15 +75,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" value="{{ $petugas->username }}" required>
+                                <input type="text" class="form-control" id="username" name="username" value="{{ $item->username }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" value="{{ $petugas->email }}" required>
+                                <input type="text" class="form-control" id="email" name="email" value="{{ $item->email }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="text" class="form-control" id="password" name="password" value="{{ $petugas->password }}" required>
+                                <input type="text" class="form-control" id="password" name="password" value="{{ $item->password }}" required>
                             </div>
                             <button type="submit" class="btn btn-dark">Save</button>
                         </form>
