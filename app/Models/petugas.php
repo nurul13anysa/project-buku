@@ -11,6 +11,6 @@ class Petugas extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nama_petugas',  
+        'nama_petugas', 'username', 'email', 'password',
     ];
 }

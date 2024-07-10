@@ -38,7 +38,7 @@
         }
         .sidebar {
             background-color: #343a40;
-            height: 100vh;
+            height: 200vh;
             position: fixed;
         }
         .nav-link {
@@ -126,7 +126,7 @@
                                 <a class="nav-link" href="/petugas">Petugas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/class_room">Class Room</a>
+                                <a class="nav-link" href="/class_room">ClassRoom</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/peraturan">Peraturan</a>

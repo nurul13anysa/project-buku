@@ -23,6 +23,9 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Petugas</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Password</th>
                             <th width="12%">Option</th>
                         </tr>
                     </thead>
@@ -31,6 +34,9 @@
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $item->nama_petugas }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->password }}</td>
                                 <td>
                                     <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#editModal{{ $item->id }}">Edit</button>
                                     <form action="{{ route('petugas.destroy', $item->id) }}" method="POST" style="display:inline;">
@@ -65,6 +71,18 @@
                             <div class="form-group">
                                 <label for="nama">Nama Petugas</label>
                                 <input type="text" class="form-control" id="nama" name="nama_petugas" value="{{ $item->nama_petugas }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" value="{{ $petugas->username }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" value="{{ $petugas->email }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" id="password" name="password" value="{{ $petugas->password }}" required>
                             </div>
                             <button type="submit" class="btn btn-dark">Save</button>
                         </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Petugas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PetugasController extends Controller
 {
@@ -26,44 +27,57 @@ class PetugasController extends Controller
         return view('petugas.create', $data);
     }
 
-    public function store(Request $request)
+    public function store(Request $request) 
     {
-        // Validate input data
+        // Validasi data input
         $request->validate([
             'nama_petugas' => 'required|string|max:255',
+            'username'     => 'required|string|max:255',
+            'email'        => 'required|email|unique:petugas,email',
+            'password'     => 'nullable|string|min:8',
         ]);
 
-        // Save new data to the database
+        // Simpan data baru ke database
         $petugas = new Petugas();
         $petugas->nama_petugas = $request->nama_petugas;
+        $petugas->username = $request->username;
+        $petugas->email = $request->email;
+        $petugas->password = Hash::make($request->password);        
         $petugas->save();
 
-        // Redirect to index page with success message
+        // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('petugas.index')->with('success', 'Petugas has been created successfully.');
     }
 
-    // Method to update data
     public function update(Request $request, $id)
     {
-        // Validate input data
+        // Validasi data input
         $request->validate([
             'nama_petugas' => 'required|string|max:255',
+            'username'     => 'required|string|max:255',
+            'email'        => 'required|email|unique:petugas,email,'.$id,
+            'password'     => 'nullable|string|min:8',
         ]);
 
-        // Get petugas data by ID
+        // Dapatkan data petugas berdasarkan ID
         $petugas = Petugas::findOrFail($id);
 
-        // Update petugas data with new data
+        // Perbarui data petugas dengan data baru
         $petugas->nama_petugas = $request->nama_petugas;
+        $petugas->username = $request->username;
+        $petugas->email = $request->email;
+        if ($request->password) {
+            $petugas->password = Hash::make($request->password);
+        }
         $petugas->save();
 
-        // Redirect to index page with success message
+        // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('petugas.index')->with('success', 'Petugas has been updated successfully.');
     }
 
     public function destroy($id)
     {
-        $petugas = Petugas::where('id', $id)->first();
+        $petugas = Petugas::findOrFail($id);
         $petugas->delete();
 
         return redirect()->route('petugas.index')->with('success', 'Petugas has been deleted successfully.');
