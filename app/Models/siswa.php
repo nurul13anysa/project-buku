@@ -11,6 +11,6 @@ class Siswa extends Model
     protected $guarded = ["id"];
 
     public function classRoom(){
-        return $this->belongsTo(ClassRoom::class);
+        return $this->belongsTo(ClassRoom::class,'class_id');
     }
 }

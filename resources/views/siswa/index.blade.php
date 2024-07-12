@@ -26,8 +26,8 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>Class</th>
                                 <th>Gender</th>
+                                <th>Class</th>
                                 <th>Alamat</th>
                                 <th>No Telpon</th>
                                 <th>No Kendaraan</th>
@@ -44,8 +44,8 @@
                                     <td>{{ $siswa->username }}</td>
                                     <td>{{ $siswa->email }}</td>
                                     <td>{{ $siswa->password }}</td>
-                                    <td>{{ $siswa->gender }}</td>
-                                    <td>{{ $siswa->class_id }}</td>
+                                    <td>{{ $siswa->gender == '0' ? 'laki=laki' : 'perempuan' }}</td>
+                                    <td>{{ $siswa->classRoom->nama_kelas }} - {{$siswa->classRoom->nama_jurusan}}</td>
                                     <td>{{ $siswa->alamat }}</td>
                                     <td>{{ $siswa->no_telpon }}</td>
                                     <td>{{ $siswa->no_kendaraan }}</td>
@@ -101,8 +101,7 @@
                                 <div class="form-group">
                                     <label for="class" class="text-capitalize">gender</label>
                                     <select name="class_id" id="class_id" class="form-control">
-                                        <option>Pilih Gender</option>t
-                                        <option value="0"  {{$siswa->gender == '0' ? 'selected' : ''}} >Laki-laki</option>
+                                        <option>Pilih Gender</option>t <option value="0"  {{$siswa->gender == '0' ? 'selected' : ''}} >Laki-laki</option>
                                         <option value="1" {{$siswa->gender == '1' ? 'selected' : ''}} >perempuan</option>
                                     </select>
                                 </div>

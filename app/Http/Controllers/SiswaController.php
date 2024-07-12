@@ -11,7 +11,7 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        $siswas = Siswa::all();
+        $siswas = Siswa::with('classRoom')->get();
         $classrooms = Classroom::all(); // Mengambil semua data classroom
 
         return view('siswa.index', compact('siswas','classrooms'));
