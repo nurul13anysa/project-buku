@@ -25,7 +25,7 @@
             <div class="col-sm-10">
               <input type="text" name="kode" id="kode" class="form-control" placeholder="Masukan kode" value="{{ old('kode') }}">
               @error('kode')
-                
+                <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
@@ -34,26 +34,28 @@
             <label for="jenis_pelanggaran" class="col-sm-2 col-form-label">Jenis Pelanggaran <span class="text-danger">*</span></label>
             <div class="col-sm-10">
               <input type="text" name="jenis_pelanggaran" id="jenis_pelanggaran" class="form-control" placeholder="Masukan Jenis Pelanggaran" value="{{ old('jenis_pelanggaran') }}">
-              @error('jenis_pelanggan')
-
+              @error('jenis_pelanggaran')
+                <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
+
           <div class="mb-3 row">
             <label for="point" class="col-sm-2 col-form-label">Point <span class="text-danger">*</span></label>
             <div class="col-sm-10">
               <input type="text" name="point" id="point" class="form-control" placeholder="Masukan Point" value="{{ old('point') }}">
               @error('point')
-
+                <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>
+
           <div class="mb-3 row">
             <label for="penanganan" class="col-sm-2 col-form-label">Penanganan <span class="text-danger">*</span></label>
             <div class="col-sm-10">
               <input type="text" name="penanganan" id="penanganan" class="form-control" placeholder="Masukan Penanganan" value="{{ old('penanganan') }}">
               @error('penanganan')
-
+                <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
           </div>

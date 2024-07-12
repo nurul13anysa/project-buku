@@ -117,7 +117,7 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Dashboard</a>
+                                <a class="nav-link" href="/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/siswa">Siswa</a>
@@ -136,6 +136,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/pelanggar">Pelanggar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/kami">Tentang Kami</a>
                             </li>
                         </ul>
                     </div>

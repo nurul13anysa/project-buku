@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index (){
         $title = "Dashboard";
-        return view('dashboard',['title'=> $title]);
+        return view('dashboard.index',['title'=> $title]);
     }
 
 //     public function dashboard()

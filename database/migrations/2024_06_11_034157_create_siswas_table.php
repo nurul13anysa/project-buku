@@ -17,13 +17,13 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->string('password');
-            $table->foreignId('class_rooms_id');
+            $table->unsignedBigInteger('class_id');
             $table->boolean('gender');
-            $table->string('alamat');
-            $table->integer('no_telpon');
-            $table->integer('no_kendaraan');
-            $table->integer('nis');
-            $table->integer('nisn');
+            $table->text('alamat');
+            $table->string('no_telpon', 15);
+            $table->string('no_kendaraan', 10);
+            $table->string('nis', 20);
+            $table->string('nisn', 20);
             $table->timestamps();
         });
     }
