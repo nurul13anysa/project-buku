@@ -12,6 +12,6 @@ class PelanggarSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-    }
+        //
+    }
 }

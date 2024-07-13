@@ -24,7 +24,7 @@
                                 <th>No</th>
                                 <th>Nama Siswa</th>
                                 <th>Tanggal</th>
-                                <th>Class</th>
+                                <th>Kelas</th>
                                 <th>Kode Pelanggaran</th>
                                 <th>Point</th>
                                 <th>Penanganan</th>
@@ -38,7 +38,7 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $pelanggar->nama_siswa }}</td>
                                     <td>{{ $pelanggar->tanggal }}</td>
-                                    <td>{{ $pelanggar->class }}</td>
+                                    <td>{{ $pelanggar->kelas }}</td>
                                     <td>{{ $pelanggar->kode_pelanggaran }}</td>
                                     <td>{{ $pelanggar->point }}</td>
                                     <td>{{ $pelanggar->penanganan }}</td>
@@ -83,8 +83,8 @@
                                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $pelanggar->tanggal }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="Class">Class</label>
-                                    <input type="text" class="form-control" id="class" name="class" value="{{ $pelanggar->class }}" required>
+                                    <label for="kelas">Kelas</label>
+                                    <input type="text" class="form-control" id="kelas" name="kelas" value="{{ $pelanggar->kelas }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="kode_pelanggaran">Kode Pelanggaran</label>
