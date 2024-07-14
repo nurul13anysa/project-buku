@@ -25,7 +25,7 @@
                                 <th>Kode</th>
                                 <th>Jenis Pelanggaran</th>
                                 <th>Point</th>
-                                <th>Penanganan</th>
+                                <th>Point ID</th>
                                 <th width="12%">Option</th>
                             </tr>
                         </thead>
@@ -36,7 +36,7 @@
                                     <td>{{ $peraturan->kode }}</td>
                                     <td>{{ $peraturan->jenis_pelanggaran }}</td>
                                     <td>{{ $peraturan->point }}</td>
-                                    <td>{{ $peraturan->penanganan }}</td>
+                                    <td>{{ $peraturan->point_id}}</td>
                                     <td>
                                         <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#editModal{{ $peraturan->id }}">Edit</button>
                                         <form action="{{ route('peraturan.destroy', $peraturan->id) }}" method="POST" style="display:inline;">
@@ -81,8 +81,8 @@
                                     <input type="number" class="form-control" id="point" name="point" value="{{ $peraturan->point }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="penanganan">Penanganan</label>
-                                    <input type="text" class="form-control" id="penanganan" name="penanganan" value="{{ $peraturan->penanganan }}" required>
+                                    <label for="point_id">Point ID</label>
+                                    <input type="number" class="form-control" id="point_id" name="point_id" value="{{ $peraturan->point_id }}" required>
                                 </div>
                                 <button type="submit" class="btn btn-dark">Save</button>
                             </form>

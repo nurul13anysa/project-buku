@@ -38,7 +38,7 @@ class PeraturanController extends Controller
             'kode' => 'required|string|max:255',
             'jenis_pelanggaran' => 'required|string|max:255',
             'point' => 'required|string|max:255',
-            'penanganan' => 'required|string|max:255',
+            'point_id' => 'required|string|max:255',
         ]);
 
         // Simpan data baru ke dalam database
@@ -46,7 +46,7 @@ class PeraturanController extends Controller
         $peraturan->kode = $request->kode;
         $peraturan->jenis_pelanggaran= $request->jenis_pelanggaran;
         $peraturan->point = $request->point;
-        $peraturan->penanganan = $request->penanganan;
+        $peraturan->point_id = $request->point_id;
         $peraturan->save();
 
         // Redirect ke halaman index dengan pesan sukses
@@ -61,7 +61,7 @@ class PeraturanController extends Controller
             'kode' => 'required|string|max:255',
             'jenis_pelanggaran' => 'required|string|max:255',
             'point' => 'required|string|max:255',
-            'penanganan' => 'required|string|max:255',
+            'point_id' => 'required|string|max:255',
         ]);
 
         // Ambil data kelas berdasarkan ID
@@ -71,7 +71,7 @@ class PeraturanController extends Controller
         $peraturan->kode = $request->kode;
         $peraturan->jenis_pelanggaran = $request->jenis_pelanggaran;
         $peraturan->point = $request->point;
-        $peraturan->penanganan = $request->penanganan;
+        $peraturan->point_id = $request->point_id;
         $peraturan->save();
 
         // Redirect ke halaman index dengan pesan sukses
@@ -89,3 +89,4 @@ class PeraturanController extends Controller
         // cari di dokumentasi laravel menggunakan Eloquent Laravel
     }
 }
+ 

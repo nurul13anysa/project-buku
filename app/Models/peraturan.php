@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Peraturan extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'kode',
+        'jenis_pelanggaran',
+        'point',
+        'point_id'
+    ];
 }

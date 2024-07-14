@@ -51,10 +51,10 @@
           </div>
 
           <div class="mb-3 row">
-            <label for="penanganan" class="col-sm-2 col-form-label">Penanganan <span class="text-danger">*</span></label>
+            <label for="point_id" class="col-sm-2 col-form-label">Point ID <span class="text-danger">*</span></label>
             <div class="col-sm-10">
-              <input type="text" name="penanganan" id="penanganan" class="form-control" placeholder="Masukan Penanganan" value="{{ old('penanganan') }}">
-              @error('penanganan')
+              <input type="text" name="point_id" id="point_id" class="form-control" placeholder="Masukan Point ID" value="{{ old('point_id') }}">
+              @error('point_id')
                 <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
