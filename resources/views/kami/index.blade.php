@@ -68,7 +68,7 @@
     <div class="container mt-4">
         <h1 class="mb-4">Tentang Kami - Discipline Book</h1>
         <a href="{{ route('dashboard.index') }}" class="btn btn-outline-secondary mb-3 back-button">Back</a>
-        <img class="school-image" src="image/smkn1katapang.jpg" alt="SMKN 1 Katapang">
+        <img class="school-image" src="image/smkn1katapang1.jpg" alt="SMKN 1 Katapang">
     
         <div class="team-members">
             <div class="app-description">
@@ -80,6 +80,12 @@
                     Dengan Discipline Book, pengguna dapat melihat riwayat pelanggaran, tindakan disiplin yang diambil, serta memantau perubahan perilaku siswa dari waktu ke waktu. Aplikasi ini dirancang untuk meningkatkan efektivitas pengelolaan ketertiban di sekolah.
                 </p>
             </div>
+            <h2>Manfaat</h2>
+            <ul>
+                <li>Efisiensi: Mempermudah pencatatan dan pengelolaan data ketertiban siswa secara digital, mengurangi penggunaan kertas dan administrasi manual.</li>
+                <li>Transparansi: Meningkatkan transparansi dalam proses pengelolaan disiplin, memungkinkan akses mudah bagi pihak terkait seperti guru dan staf sekolah.</li>
+                <li>Pemantauan Berkelanjutan: Membantu dalam memantau perkembangan dan perubahan perilaku siswa secara berkelanjutan, mendukung upaya pembinaan yang lebih efektif.</li>
+            </ul>
             <h2>Nama Anggota Kelompok III</h2>
             <div class="row">
                 <div class="image">

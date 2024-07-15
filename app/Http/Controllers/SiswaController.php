@@ -62,7 +62,7 @@ class SiswaController extends Controller
 
     public function edit($id)
     {
-        $siswa = Siswa::findOrFail($id);
+        $siswas = Siswa::findOrFail($id);
         $classrooms = Classroom::all(); // Mengambil semua data classroom
         return view('siswa.edit', compact('siswa', 'classrooms'));
     }

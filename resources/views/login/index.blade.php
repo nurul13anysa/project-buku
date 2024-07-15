@@ -9,7 +9,7 @@
 
     <style>
         body {
-            background-color: #f8f9fa; /* Latar belakang lebih lembut */
+            background-color: #c3cbd3d2; /* Latar belakang lebih lembut */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,7 @@
 
         .card {
             border: none;
-            border-radius: 20px;
+            border-radius: 20px 20px 50px 50px; /* Mengatur tumpul dan lucu */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px; /* Atur lebar maksimum kartu */
@@ -28,7 +28,6 @@
         .card-header {
             background-color: #343a40; /* Warna latar belakang header */
             color: white; /* Warna teks header */
-            border-radius: 20px 20px 0 0;
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
@@ -43,7 +42,7 @@
         }
 
         .btn-primary {
-            background-color: #343a40;
+            background-color: #363d44;
             border: none;
             border-radius: 10px;
             width: 100%;
@@ -67,7 +66,8 @@
 <body>
 <div class="container">
     <div class="card">
-        <div class="card-header">{{ __('Login') }}</div>
+        <div class="card-header" style="border-radius: 30px 30px 2px 2px">{{ __('Login') }}</div>
+    <img class="school-image" src="image/ai.png" alt="SMKN 1 Katapang" style="width: 50%; margin-left: 13ch; margin-top: 3ch;">
         <div class="card-body">
            
             @if(session()->has('success'))

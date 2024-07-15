@@ -25,19 +25,19 @@ Route::get('/login-debug', function () {
         return 'LoginController does not exist!';
     }
 });
-Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/login', [LoginController::class,'authenticate'])->middleware('guest');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('views.dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('user',UserController::class);
 
-Route::resource('dashboard', DashboardController::class);
-Route::resource('siswa', SiswaController::class);
-Route::resource('petugas', PetugasController::class);
-Route::resource('class_room', ClassRoomController::class);
-Route::resource('peraturan', PeraturanController::class);
-Route::resource('point', PointController::class);
-Route::resource('pelanggar', PelanggarController::class);
-Route::resource('kami', KamiController::class);
+Route::resource('dashboard', DashboardController::class)->middleware('auth');
+Route::resource('siswa', SiswaController::class)->middleware('auth');
+Route::resource('petugas', PetugasController::class)->middleware('auth');
+Route::resource('class_room', ClassRoomController::class)->middleware('auth');
+Route::resource('peraturan', PeraturanController::class)->middleware('auth');
+Route::resource('pelanggar', PelanggarController::class)->middleware('auth');
+Route::resource('kami', KamiController::class)->middleware('auth');

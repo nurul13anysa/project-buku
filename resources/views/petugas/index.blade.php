@@ -25,7 +25,6 @@
                             <th>Nama Petugas</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th width="12%">Option</th>
                         </tr>
                     </thead>
@@ -37,7 +36,6 @@
                                 <td>{{ $item->nama_petugas }}</td>
                                 <td>{{ $item->username }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->password }}</td>
                                 <td>
                                     <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#editModal{{ $item->id }}">Edit</button>
                                     <form action="{{ route('petugas.destroy', $item->id) }}" method="POST" style="display:inline;">
@@ -80,10 +78,6 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email" name="email" value="{{ $item->email }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="text" class="form-control" id="password" name="password" value="{{ $item->password }}" required>
                             </div>
                             <button type="submit" class="btn btn-dark">Save</button>
                         </form>

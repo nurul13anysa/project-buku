@@ -9,14 +9,9 @@ class PetugasController extends Controller
 {
     public function index()
     {
-        $data = Petugas::all();
-
-        $data = [
-            "petugas" => $data
-        ];
-        return view('petugas.index', $data);
+        $petugas = Petugas::all(); // Mengambil data petugas dari database
+        return view('petugas.index', compact('petugas'));
     }
-
     public function create()
     {
         $data = Petugas::all();

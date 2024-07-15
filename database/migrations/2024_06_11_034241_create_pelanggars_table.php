@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('pelanggars', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_siswa');
+            $table->string('siswa_id');
             $table->date('tanggal');
-            $table->string('class');
-            $table->integer('kode_pelanggaran');
-            $table->integer('point');
-            $table->string('penanganan');
-            $table->string('nama_petugas');
+            $table->integer('kode_id');
+            $table->string('keterangan')->nullable();
+            $table->string('petugas_id');
             $table->timestamps();
         });
     }

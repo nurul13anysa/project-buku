@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Peraturan extends Model
 {
     use HasFactory;
+    
+    public function pelanggars()
+    {
+        return $this->hasMany(Pelanggar::class, 'kode_id');
+    }
 }

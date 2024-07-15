@@ -13,19 +13,24 @@
   <div class="container py-3">
     <div class="card shadow-sm">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h1 class="bg-teal-500 p-3 text-black font-bold">Form Tambah Point</h1>
-        <a href="{{ route('point.index') }}" class="btn btn-outline-secondary">Back</a>
+        <h1 class="bg-teal-500 p-3 text-black font-bold">Form Tambah Pelanggar</h1>
+        <a href="{{ route('pelanggar.index') }}" class="btn btn-outline-secondary">Back</a>
       </div>
       <div class="card-body">
-        <form action="{{ route('point.store') }}" method="POST">
+        <form action="{{ route('pelanggar.store') }}" method="POST">
           @csrf
 
           <div class="mb-3 row">
-            <label for="nama_siswa" class="col-sm-2 col-form-label">Nama Siswa <span class="text-danger">*</span></label>
+            <label for="class" class="col-sm-2 col-form-label">Indentitas Siswa <span class="text-danger">*</span></label>
             <div class="col-sm-10">
-              <input type="text" name="nama_siswa" id="nama_siswa" class="form-control" placeholder="Masukan Nama Siswa" value="{{ old('nama_siswa') }}">
-              @error('nama_siswa')
-                <div class="text-danger">{{ $message }}</div>
+              <select name="siswa_id" id="class" class="form-control">
+                <option value="">Pilih Siswa</option>
+                @foreach($siswas as $item)
+                  <option value="{{ $item->id }}">{{ $item->nama_siswa . " - " . $item->class_id }}</option>
+                @endforeach
+              </select>
+              @error('siswa_id')
+                <span class="text-danger">{{ $message }}</span>
               @enderror
             </div>
           </div>
@@ -35,37 +40,37 @@
             <div class="col-sm-10">
               <input type="date" name="tanggal" id="tanggal" class="form-control" placeholder="Masukan Tanggal" value="{{ old('tanggal') }}">
               @error('tanggal')
-                <div class="text-danger">{{ $message }}</div>
+
               @enderror
             </div>
           </div>
 
           <div class="mb-3 row">
-            <label for="class" class="col-sm-2 col-form-label">Class <span class="text-danger">*</span></label>
+            <label for="class" class="col-sm-2 col-form-label">Kode pelanggaran-Point-Penanganan<span class="text-danger">*</span></label>
             <div class="col-sm-10">
-              <input type="text" name="class" id="class" class="form-control" placeholder="Masukan Class" value="{{ old('class') }}">
-              @error('class')
-                <div class="text-danger">{{ $message }}</div>
+              <select name="kode_id" id="class" class="form-control">
+                <option value="">Pilih Pelanggaran</option>
+                @foreach($peraturans as $item)
+                  <option value="{{ $item->id }}">{{ $item->kode . " - " . $item->point. " - " . $item->penanganan }}</option>
+                @endforeach
+              </select>
+              @error('kode_id')
+                <span class="text-danger">{{ $message }}</span>
               @enderror
             </div>
           </div>
 
           <div class="mb-3 row">
-            <label for="tugas_penanganan" class="col-sm-2 col-form-label">Tugas Penanganan <span class="text-danger">*</span></label>
+            <label for="class" class="col-sm-2 col-form-label">Nama Petugas<span class="text-danger">*</span></label>
             <div class="col-sm-10">
-              <input type="text" name="tugas_penanganan" id="tugas_penanganan" class="form-control" placeholder="Tugas Penanganan" value="{{ old('tugas_penanganan') }}">
-              @error('tugas_penanganan')
-                <div class="text-danger">{{ $message }}</div>
-              @enderror
-            </div>
-          </div>
-
-          <div class="mb-3 row">
-            <label for="pelanggaran" class="col-sm-2 col-form-label">Pelanggaran <span class="text-danger">*</span></label>
-            <div class="col-sm-10">
-              <input type="text" name="pelanggaran" id="pelanggaran" class="form-control" placeholder="Pelanggaran" value="{{ old('pelanggaran') }}">
-              @error('pelanggaran')
-                <div class="text-danger">{{ $message }}</div>
+              <select name="petugas_id" id="class" class="form-control">
+                <option value="">Pilih Petugas</option>
+                @foreach($petugas as $item)
+                  <option value="{{ $item->id }}">{{ $item->nama_petugas }}</option>
+                @endforeach
+              </select>
+              @error('petugas_id')
+                <span class="text-danger">{{ $message }}</span>
               @enderror
             </div>
           </div>
